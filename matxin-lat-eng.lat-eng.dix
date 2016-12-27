@@ -1,0 +1,19 @@
+<dictionary>
+    <sdefs>
+        <sdef n="mi"/>
+        <sdef n="UPOSTAG"/>
+        <sdef n="Aspect"/>
+        <sdef n="Case"/>
+        <sdef n="Degree"/>
+        <sdef n="Gender"/>
+        <sdef n="Mood"/>
+        <sdef n="Number"/>
+        <sdef n="Person"/>
+        <sdef n="Tense"/>
+        <sdef n="VerbForm"/>
+        <sdef n="Voice"/>
+    </sdefs>
+    <section id="main" type="standard">
+        <e><p><l>video1<s n="mi"/>VERB</l><r>see<s n="UPOSTAG"/>VERB</r></p></e>
+    </section>
+</dictionary>
