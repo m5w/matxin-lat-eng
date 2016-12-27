@@ -50,8 +50,11 @@
             <e><p><l>|Aspect=Imp</l><r><s n="Aspect"/>Imp</r></p><par n="Mood"/></e>
             <e><p><l>|Aspect=Perf</l><r><s n="Aspect"/>Perf</r></p><par n="Mood"/></e>
         </pardef>
+        <pardef n="VERB">
+            <e><p><l><s n="mi"/>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Aspect"/></e>
+        </pardef>
     </pardefs>
     <section id="main" type="standard">
-        <e><p><l>video1<s n="mi"/>VERB</l><r>see<s n="UPOSTAG"/>VERB</r></p><par n="Aspect"/></e>
+        <e><p><l>video1</l><r>see</r></p><par n="VERB"/></e>
     </section>
 </dictionary>
