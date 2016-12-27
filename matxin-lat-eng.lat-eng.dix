@@ -16,20 +16,38 @@
     <pardefs>
         <pardef n="Voice">
             <e><p><l>|Voice=Act</l><r><s n="Voice"/>Act</r></p></e>
+            <e><p><l>|Voice=Pass</l><r><s n="Voice"/>Pass</r></p></e>
         </pardef>
         <pardef n="VerbForm">
-            <e><p><l>|VerbForm=Fin</l><r></r></p><par n="Voice"/></e>
+            <e><p><l>|VerbForm=Fin</l><r><s n="VerbForm"/>Fin</r></p><par n="Voice"/></e>
+            <e><p><l>|VerbForm=Inf</l><r><s n="VerbForm"/>Inf</r></p><par n="Voice"/></e>
+            <e><p><l>|VerbForm=Sup</l><r><s n="VerbForm"/>Sup</r></p><par n="Voice"/></e>
+            <e><p><l>|VerbForm=Part</l><r><s n="VerbForm"/>Part</r></p><par n="Voice"/></e>
+            <e><p><l>|VerbForm=Gdv</l><r><s n="VerbForm"/>Gdv</r></p><par n="Voice"/></e>
+            <e><p><l>|VerbForm=Ger</l><r><s n="VerbForm"/>Ger</r></p><par n="Voice"/></e>
         </pardef>
         <pardef n="Tense">
             <e><p><l>|Tense=Past</l><r><s n="Tense"/>Past</r></p><par n="VerbForm"/></e>
+            <e><p><l>|Tense=Pres</l><r><s n="Tense"/>Pres</r></p><par n="VerbForm"/></e>
+            <e><p><l>|Tense=Fut</l><r><s n="Tense"/>Fut</r></p><par n="VerbForm"/></e>
+            <e><p><l>|Tense=Pqp</l><r><s n="Tense"/>Pqp</r></p><par n="VerbForm"/></e>
         </pardef>
         <pardef n="Person">
-            <e><p><l>|Number=Sing|Person=1</l><r><s n="Person"/>Sg1</r></p><par n="Tense"/></e>
+            <e><p><l>|Person=1</l><r><s n="Person"/>1</r></p><par n="Tense"/></e>
+            <e><p><l>|Person=2</l><r><s n="Person"/>2</r></p><par n="Tense"/></e>
+            <e><p><l>|Person=3</l><r><s n="Person"/>3</r></p><par n="Tense"/></e>
+        </pardef>
+        <pardef n="Number">
+            <e><p><l>|Number=Sing</l><r><s n="Number"/>Sing</r></p><par n="Person"/></e>
+            <e><p><l>|Number=Plur</l><r><s n="Number"/>Plur</r></p><par n="Person"/></e>
         </pardef>
         <pardef n="Mood">
-            <e><p><l>|Mood=Ind</l><r><s n="Mood"/>Ind</r></p><par n="Person"/></e>
+            <e><p><l>|Mood=Ind</l><r><s n="Mood"/>Ind</r></p><par n="Number"/></e>
+            <e><p><l>|Mood=Imp</l><r><s n="Mood"/>Imp</r></p><par n="Number"/></e>
+            <e><p><l>|Mood=Sub</l><r><s n="Mood"/>Sub</r></p><par n="Number"/></e>
         </pardef>
         <pardef n="Aspect">
+            <e><p><l>|Aspect=Imp</l><r><s n="Aspect"/>Imp</r></p><par n="Mood"/></e>
             <e><p><l>|Aspect=Perf</l><r><s n="Aspect"/>Perf</r></p><par n="Mood"/></e>
         </pardef>
     </pardefs>
