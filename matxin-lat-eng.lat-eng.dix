@@ -18,7 +18,7 @@
             <e><p><l>|Voice=Act</l><r><s n="Voice"/>Act</r></p></e>
         </pardef>
         <pardef n="VerbForm">
-            <e><p><l>|VerbForm=Fin|</l><r></r></p><par n="Voice"/></e>
+            <e><p><l>|VerbForm=Fin</l><r></r></p><par n="Voice"/></e>
         </pardef>
         <pardef n="Tense">
             <e><p><l>|Tense=Past</l><r><s n="Tense"/>Past</r></p><par n="VerbForm"/></e>
