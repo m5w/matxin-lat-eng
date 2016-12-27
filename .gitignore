@@ -1,2 +1,5 @@
 # gvim
 *.swp
+
+# lt-comp
+*.bin
