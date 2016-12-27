@@ -13,7 +13,27 @@
         <sdef n="VerbForm"/>
         <sdef n="Voice"/>
     </sdefs>
+    <pardefs>
+        <pardef n="Voice">
+            <e><p><l>|Voice=Act</l><r><s n="Voice"/>Act</r></p></e>
+        </pardef>
+        <pardef n="VerbForm">
+            <e><p><l>|VerbForm=Fin|</l><r></r></p><par n="Voice"/></e>
+        </pardef>
+        <pardef n="Tense">
+            <e><p><l>|Tense=Past</l><r><s n="Tense"/>Past</r></p><par n="VerbForm"/></e>
+        </pardef>
+        <pardef n="Person">
+            <e><p><l>|Number=Sing|Person=1</l><r><s n="Person"/>Sg1</r></p><par n="Tense"/></e>
+        </pardef>
+        <pardef n="Mood">
+            <e><p><l>|Mood=Ind</l><r><s n="Mood"/>Ind</r></p><par n="Person"/></e>
+        </pardef>
+        <pardef n="Aspect">
+            <e><p><l>|Aspect=Perf</l><r><s n="Aspect"/>Perf</r></p><par n="Mood"/></e>
+        </pardef>
+    </pardefs>
     <section id="main" type="standard">
-        <e><p><l>video1<s n="mi"/>VERB</l><r>see<s n="UPOSTAG"/>VERB</r></p></e>
+        <e><p><l>video1<s n="mi"/>VERB</l><r>see<s n="UPOSTAG"/>VERB</r></p><par n="Aspect"/></e>
     </section>
 </dictionary>
