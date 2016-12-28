@@ -68,6 +68,9 @@
 			<e><p><l>|Case=Loc</l><r><s n="Case"/>Loc</r></p><par n="Gender"/></e>
 			<e><p><l>|Case=Abl</l><r><s n="Case"/>Abl</r></p><par n="Gender"/></e>
 		</pardef>
+		<pardef n="NOUN">
+			<e><p><l><s n="mi"/>NOUN</l><r><s n="UPOSTAG"/>NOUN</r></p><par n="Case"/></e>
+		</pardef>
         <pardef n="Aspect">
 			<!-- for past-tense verbs -->
             <e><p><l>|Aspect=Imp</l><r><s n="Aspect"/>Imp</r></p><par n="Mood"/></e>
@@ -76,8 +79,19 @@
 			<!-- for pefect participles -->
             <e><p><l>|Aspect=Perf</l><r><s n="Aspect"/>Perf</r></p><par n="Case"/></e>
         </pardef>
+		<pardef n="VERB">
+			<!-- for finite and imperative present-tense verbs -->
+			<e><p><l>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Mood"/></e>
+
+			<!-- for past-tense verbs -->
+			<e><p><l>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Aspect"/></e>
+
+			<!-- for infinite verbs -->
+			<e><p><l>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Tense"/></e>
+		</pardef>
     </pardefs>
     <section id="main" type="standard">
-        <e><p><l>et1<s n="mi"/>
+		<e><p><l>Gallia</l><r>Gaul</r></p><par n="NOUN"/></e>
+		<e><p><l>sum</l><r>be</r></p><par n="VERB"/></e>
     </section>
 </dictionary>
