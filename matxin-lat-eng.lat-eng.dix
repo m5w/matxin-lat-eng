@@ -118,6 +118,44 @@
 			<e><p><l>qui<s n="mi"/>PRON|Case=Gen|Gender=Neut</l><r>which<s n="UPOSTAG"/>PRON<s n="Case"/>Gen</r></p><par n="Number"/></e>
 			<e><p><l>qui<s n="mi"/>PRON|Case=Abl|Gender=Neut</l><r>which<s n="UPOSTAG"/>PRON<s n="Case"/>Abl</r></p><par n="Number"/></e>
 		</pardef>
+		<pardef n="ipse">
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Nom|Gender=Masc|Number=Sing</l><r>himself<s n="UPOSTAG"/>PRON<s n="Case"/>Nom<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Acc|Gender=Masc|Number=Sing</l><r>himself<s n="UPOSTAG"/>PRON<s n="Case"/>Acc<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Dat|Gender=Masc|Number=Sing</l><r>himself<s n="UPOSTAG"/>PRON<s n="Case"/>Dat<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Gen|Gender=Masc|Number=Sing</l><r>himself<s n="UPOSTAG"/>PRON<s n="Case"/>Gen<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Voc|Gender=Masc|Number=Sing</l><r>himself<s n="UPOSTAG"/>PRON<s n="Case"/>Voc<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Abl|Gender=Masc|Number=Sing</l><r>himself<s n="UPOSTAG"/>PRON<s n="Case"/>Abl<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Nom|Gender=Fem|Number=Sing</l><r>herself<s n="UPOSTAG"/>PRON<s n="Case"/>Nom<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Acc|Gender=Fem|Number=Sing</l><r>herself<s n="UPOSTAG"/>PRON<s n="Case"/>Acc<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Dat|Gender=Fem|Number=Sing</l><r>herself<s n="UPOSTAG"/>PRON<s n="Case"/>Dat<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Gen|Gender=Fem|Number=Sing</l><r>herself<s n="UPOSTAG"/>PRON<s n="Case"/>Gen<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Voc|Gender=Fem|Number=Sing</l><r>herself<s n="UPOSTAG"/>PRON<s n="Case"/>Voc<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Abl|Gender=Fem|Number=Sing</l><r>herself<s n="UPOSTAG"/>PRON<s n="Case"/>Abl<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Nom|Gender=Neut|Number=Sing</l><r>itself<s n="UPOSTAG"/>PRON<s n="Case"/>Nom<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Acc|Gender=Neut|Number=Sing</l><r>itself<s n="UPOSTAG"/>PRON<s n="Case"/>Acc<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Dat|Gender=Neut|Number=Sing</l><r>itself<s n="UPOSTAG"/>PRON<s n="Case"/>Dat<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Gen|Gender=Neut|Number=Sing</l><r>itself<s n="UPOSTAG"/>PRON<s n="Case"/>Gen<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Voc|Gender=Neut|Number=Sing</l><r>itself<s n="UPOSTAG"/>PRON<s n="Case"/>Voc<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Abl|Gender=Neut|Number=Sing</l><r>itself<s n="UPOSTAG"/>PRON<s n="Case"/>Abl<s n="Number"/>Sing</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Nom|Gender=Masc|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Nom<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Acc|Gender=Masc|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Acc<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Dat|Gender=Masc|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Dat<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Gen|Gender=Masc|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Gen<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Voc|Gender=Masc|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Voc<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Abl|Gender=Masc|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Abl<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Nom|Gender=Fem|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Nom<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Acc|Gender=Fem|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Acc<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Dat|Gender=Fem|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Dat<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Gen|Gender=Fem|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Gen<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Voc|Gender=Fem|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Voc<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Abl|Gender=Fem|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Abl<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Nom|Gender=Neut|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Nom<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Acc|Gender=Neut|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Acc<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Dat|Gender=Neut|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Dat<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Gen|Gender=Neut|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Gen<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Voc|Gender=Neut|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Voc<s n="Number"/>Plur</r></p></e>
+			<e><p><l>ipse<s n="mi"/>PRON|Case=Abl|Gender=Neut|Number=Plur</l><r>themselves<s n="UPOSTAG"/>PRON<s n="Case"/>Abl<s n="Number"/>Plur</r></p></e>
+		</pardef>
     </pardefs>
     <section id="main" type="standard">
 		<e><p><l>Gallia</l><r>Gaul</r></p><par n="NOUN"/></e>
@@ -134,5 +172,11 @@
 		<e><p><l>alius</l><r>another</r></p><par n="ADJ"/></e>
 		<e><p><l>Aquitani</l><r>Aquitanians</r></p><par n="NOUN"/></e>
 		<e><p><l>tertius</l><r>third</r></p><par n="ADJ"/></e>
+        <e><p><l></l><r></r></p><par n="ipse"/></e>
+        <e><p><l>lingau</l><r>language</r></p><par n="NOUN"/></e>
+        <e><p><l>Celtae</l><r>Celts</r></p><par n="NOUN"/></e>
+        <e><p><l>noster</l><r>our</r></p><par n="ADJ"/></e>
+        <e><p><l>Galli</l><r>Gauls</r></p><par n="NOUN"/></e>
+        <e><p><l>appello</l><r>call</r></p><par n="VERB"/></e>
     </section>
 </dictionary>
