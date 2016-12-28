@@ -81,13 +81,13 @@
         </pardef>
 		<pardef n="VERB">
 			<!-- for finite and imperative present-tense verbs -->
-			<e><p><l>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Mood"/></e>
+			<e><p><l><s n="mi"/>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Mood"/></e>
 
 			<!-- for past-tense verbs -->
-			<e><p><l>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Aspect"/></e>
+			<e><p><l><s n="mi"/>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Aspect"/></e>
 
 			<!-- for infinite verbs -->
-			<e><p><l>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Tense"/></e>
+			<e><p><l><s n="mi"/>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Tense"/></e>
 		</pardef>
     </pardefs>
     <section id="main" type="standard">
