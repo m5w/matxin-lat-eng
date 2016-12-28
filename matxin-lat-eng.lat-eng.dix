@@ -55,9 +55,9 @@
             <e><p><l>|Mood=Sub</l><r><s n="Mood"/>Sub</r></p><par n="Number"/></e>
         </pardef>
 		<pardef n="Gender">
-			<e><p><l>|Gender=Masc</l><r><s n="Gender"/>Masc</r></p><par n="Number"/></e>
-			<e><p><l>|Gender=Fem</l><r><s n="Gender"/>Fem</r></p><par n="Number"/></e>
-			<e><p><l>|Gender=Neut</l><r><s n="Gender"/>Neut</r></p><par n="Number"/></e>
+			<e><p><l>|Gender=Masc</l><r></r></p><par n="Number"/></e>
+			<e><p><l>|Gender=Fem</l><r></r></p><par n="Number"/></e>
+			<e><p><l>|Gender=Neut</l><r></r></p><par n="Number"/></e>
 		</pardef>
 		<pardef n="Case">
 			<e><p><l>|Case=Nom</l><r><s n="Case"/>Nom</r></p><par n="Gender"/></e>
