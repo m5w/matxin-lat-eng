@@ -38,23 +38,46 @@
             <e><p><l>|Person=3</l><r><s n="Person"/>3</r></p><par n="Tense"/></e>
         </pardef>
         <pardef n="Number">
+			<!-- for finite and imperative verbs -->
             <e><p><l>|Number=Sing</l><r><s n="Number"/>Sing</r></p><par n="Person"/></e>
             <e><p><l>|Number=Plur</l><r><s n="Number"/>Plur</r></p><par n="Person"/></e>
+
+			<!-- for participles -->
+            <e><p><l>|Number=Sing</l><r><s n="Number"/>Sing</r></p><par n="Tense"/></e>
+            <e><p><l>|Number=Plur</l><r><s n="Number"/>Plur</r></p><par n="Tense"/></e>
+
+            <e><p><l>|Number=Sing</l><r><s n="Number"/>Sing</r></p></e>
+            <e><p><l>|Number=Plur</l><r><s n="Number"/>Plur</r></p></e>
         </pardef>
         <pardef n="Mood">
             <e><p><l>|Mood=Ind</l><r><s n="Mood"/>Ind</r></p><par n="Number"/></e>
             <e><p><l>|Mood=Imp</l><r><s n="Mood"/>Imp</r></p><par n="Number"/></e>
             <e><p><l>|Mood=Sub</l><r><s n="Mood"/>Sub</r></p><par n="Number"/></e>
         </pardef>
+		<pardef n="Gender">
+			<e><p><l>|Gender=Masc</l><r><s n="Gender"/>Masc</r></p><par n="Number"/></e>
+			<e><p><l>|Gender=Fem</l><r><s n="Gender"/>Fem</r></p><par n="Number"/></e>
+			<e><p><l>|Gender=Neut</l><r><s n="Gender"/>Neut</r></p><par n="Number"/></e>
+		</pardef>
+		<pardef n="Case">
+			<e><p><l>|Case=Nom</l><r><s n="Case"/>Nom</r></p><par n="Gender"/></e>
+			<e><p><l>|Case=Acc</l><r><s n="Case"/>Acc</r></p><par n="Gender"/></e>
+			<e><p><l>|Case=Dat</l><r><s n="Case"/>Dat</r></p><par n="Gender"/></e>
+			<e><p><l>|Case=Gen</l><r><s n="Case"/>Gen</r></p><par n="Gender"/></e>
+			<e><p><l>|Case=Voc</l><r><s n="Case"/>Voc</r></p><par n="Gender"/></e>
+			<e><p><l>|Case=Loc</l><r><s n="Case"/>Loc</r></p><par n="Gender"/></e>
+			<e><p><l>|Case=Abl</l><r><s n="Case"/>Abl</r></p><par n="Gender"/></e>
+		</pardef>
         <pardef n="Aspect">
+			<!-- for past-tense verbs -->
             <e><p><l>|Aspect=Imp</l><r><s n="Aspect"/>Imp</r></p><par n="Mood"/></e>
             <e><p><l>|Aspect=Perf</l><r><s n="Aspect"/>Perf</r></p><par n="Mood"/></e>
-        </pardef>
-        <pardef n="VERB">
-            <e><p><l><s n="mi"/>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Aspect"/></e>
+
+			<!-- for pefect participles -->
+            <e><p><l>|Aspect=Perf</l><r><s n="Aspect"/>Perf</r></p><par n="Case"/></e>
         </pardef>
     </pardefs>
     <section id="main" type="standard">
-        <e><p><l>video1</l><r>see</r></p><par n="VERB"/></e>
+        <e><p><l>et1<s n="mi"/>
     </section>
 </dictionary>
