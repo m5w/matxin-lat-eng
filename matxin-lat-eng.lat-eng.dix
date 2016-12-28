@@ -14,6 +14,9 @@
         <sdef n="Voice"/>
     </sdefs>
     <pardefs>
+		<pardef n="ADP">
+			<e><p><l><s n="mi"/>ADP</l><r><s n="UPOSTAG"/>ADP</r></p></e>
+		</pardef>
         <pardef n="Voice">
             <e><p><l>|Voice=Act</l><r><s n="Voice"/>Act</r></p></e>
             <e><p><l>|Voice=Pass</l><r><s n="Voice"/>Pass</r></p></e>
@@ -68,11 +71,14 @@
 			<e><p><l>|Case=Loc</l><r><s n="Case"/>Loc</r></p><par n="Gender"/></e>
 			<e><p><l>|Case=Abl</l><r><s n="Case"/>Abl</r></p><par n="Gender"/></e>
 		</pardef>
+		<pardef n="ADJ">
+			<e><p><l><s n="mi"/>ADJ</l><r><s n="UPOSTAG"/>ADJ</r></p><par n="Case"/></e>
+		</pardef>
 		<pardef n="NOUN">
 			<e><p><l><s n="mi"/>NOUN</l><r><s n="UPOSTAG"/>NOUN</r></p><par n="Case"/></e>
 		</pardef>
-		<pardef n="ADJ">
-			<e><p><l><s n="mi"/>ADJ</l><r><s n="UPOSTAG"/>ADJ</r></p><par n="Case"/></e>
+		<pardef n="NUM">
+			<e><p><l><s n="mi"/>NUM</l><r><s n="UPOSTAG"/>NUM</r></p><par n="Case"/></e>
 		</pardef>
 		<pardef n="PRON">
 			<e><p><l><s n="mi"/>PRON</l><r><s n="UPOSTAG"/>PRON</r></p><par n="Case"/></e>
@@ -95,11 +101,38 @@
 			<!-- for infinite verbs -->
 			<e><p><l><s n="mi"/>VERB</l><r><s n="UPOSTAG"/>VERB</r></p><par n="Tense"/></e>
 		</pardef>
+		<pardef n="qui">
+			<e><p><l>qui<s n="mi"/>PRON|Case=Nom|Gender=Masc</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Nom</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Acc|Gender=Masc</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Acc</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Dat|Gender=Masc</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Dat</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Gen|Gender=Masc</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Gen</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Abl|Gender=Masc</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Abl</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Nom|Gender=Fem</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Nom</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Acc|Gender=Fem</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Acc</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Dat|Gender=Fem</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Dat</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Gen|Gender=Fem</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Gen</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Abl|Gender=Fem</l><r>who<s n="UPOSTAG"/>PRON<s n="Case"/>Abl</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Nom|Gender=Neut</l><r>which<s n="UPOSTAG"/>PRON<s n="Case"/>Nom</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Acc|Gender=Neut</l><r>which<s n="UPOSTAG"/>PRON<s n="Case"/>Acc</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Dat|Gender=Neut</l><r>which<s n="UPOSTAG"/>PRON<s n="Case"/>Dat</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Gen|Gender=Neut</l><r>which<s n="UPOSTAG"/>PRON<s n="Case"/>Gen</r></p><par n="Number"/></e>
+			<e><p><l>qui<s n="mi"/>PRON|Case=Abl|Gender=Neut</l><r>which<s n="UPOSTAG"/>PRON<s n="Case"/>Abl</r></p><par n="Number"/></e>
+		</pardef>
     </pardefs>
     <section id="main" type="standard">
 		<e><p><l>Gallia</l><r>Gaul</r></p><par n="NOUN"/></e>
 		<e><p><l>sum</l><r>be</r></p><par n="VERB"/></e>
 		<e><p><l>omnis</l><r>all</r></p><par n="ADJ"/></e>
 		<e><p><l>divido</l><r>divide</r></p><par n="VERB"/></e>
+		<e><p><l>in</l><r>into</r></p><par n="ADP"/></e>
+		<e><p><l>pars</l><r>part</r></p><par n="NOUN"/></e>
+		<e><p><l>tres</l><r>three</r></p><par n="NUM"/></e>
+		<e><p><l></l><r></r></p><par n="qui"/></e>
+		<e><p><l>unus</l><r>one</r></p><par n="ADJ"/></e>
+		<e><p><l>incolo</l><r>inhabit</r></p><par n="VERB"/></e>
+		<e><p><l>Belgae</l><r>Belgae</r></p><par n="NOUN"/></e>
+		<e><p><l>alius</l><r>another</r></p><par n="ADJ"/></e>
+		<e><p><l>Aquitani</l><r>Aquitanians</r></p><par n="NOUN"/></e>
+		<e><p><l>tertius</l><r>third</r></p><par n="ADJ"/></e>
     </section>
 </dictionary>
