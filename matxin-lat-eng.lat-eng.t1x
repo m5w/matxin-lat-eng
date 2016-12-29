@@ -10,4 +10,16 @@
             <attribute name="Case">Acc</attribute>
         </template>
     </def-rule>
+    <!-- to-do: define two rules: (1) make "all" a determiner - when?
+
+      also, how does one differentiate between "the whole" and "each"?
+
+      when should one use "every" instead of "each"? cf. the passage in Aeneid
+      1 when Aeneas and his men enter the harbor-of-sorts
+
+      anyway, "all Gaul" vs. "all the state" vs. "all states" vs. "all the
+      states"
+
+      This is basically the second rule: add a "the" to words not already
+      determined -->
 </transfer>
