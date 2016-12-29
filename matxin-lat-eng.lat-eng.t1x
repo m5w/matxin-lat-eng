@@ -1,0 +1,13 @@
+<transfer>
+    <def-rule>
+        <template match="NODE[@lem='who' and @Case='Gen']">
+            <copy>
+                <apply-templates select="@*|*"/>
+                <NODE si="case" lem="of" UPOSTAG="ADP"/>
+            </copy>
+        </template>
+        <template match="NODE[@lem='who' and @Case='Gen']/@Case">
+            <attribute name="Case">Acc</attribute>
+        </template>
+    </def-rule>
+</transfer>
