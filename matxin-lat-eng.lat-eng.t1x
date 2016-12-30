@@ -23,16 +23,20 @@
     </def-rule>
 
     <def-rule>
-        <param name="linking_verbs">
-            <lemma>appello</lemma>
-        </param>
-        <template match="NODE[@lem=$linking_verbs/* and UPOSTAG='VERB']/NODE[@si='obj' and @Case='Nom']/../NODE[@lem='which']">
+        <template match="NODE[@UPOSTAG='VERB']/NODE[@lem='which' and ../NODE[@si='obj' and @Animacy='Anim' and @Case='Nom']]">
             <copy>
                 <apply-templates select="@*|*"/>
             </copy>
         </template>
-        <template match="NODE[@lem=$linking_verbs/* and UPOSTAG='VERB']/NODE[@si='obj' and @Animacy='Anim' and @Case='Nom']/../NODE[@lem='which']/@lem">
-            <attribute name="lem">who</attribute>
+        <template match="NODE[@UPOSTAG='VERB']/NODE[@lem='which' and ../NODE[@si='obj' and @Animacy='Anim' and @Case='Nom']]/@lem">
+            <choose>
+                <when test="../../@lem='call'">
+                    <attribute name="lem">who</attribute>
+                </when>
+                <otherwise>
+                    <attribute name="lem">which</attribute>
+                </otherwise>
+            </choose>
         </template>
     </def-rule>
 
