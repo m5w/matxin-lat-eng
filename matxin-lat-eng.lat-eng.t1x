@@ -1,25 +1,64 @@
 <transfer>
     <def-rule>
-        <template match="NODE[@lem='who' and @Case='Gen']">
+        <template match="NODE[(@lem='who' or @lem='which') and @Case='Gen']">
             <copy>
                 <apply-templates select="@*|*"/>
                 <NODE si="case" lem="of" UPOSTAG="ADP"/>
             </copy>
         </template>
-        <template match="NODE[@lem='who' and @Case='Gen']/@Case">
+        <template match="NODE[(@lem='who' or @lem='which') and @Case='Gen']/@Case">
             <attribute name="Case">Acc</attribute>
+        </template>
+    </def-rule>
+
+    <def-rule>
+        <template match="NODE[@Animacy]/NODE[@si='acl']/NODE[@lem='who' or @lem='which']">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@Animacy]/NODE[@si='acl']/NODE[@lem='who' or @lem='which']/@lem">
+            <choose>
+                <when test="../../../@Animacy='Anim'">
+                    <attribute name="lem">who</attribute>
+                </when>
+                <when test="../../../@Animacy='Inan'">
+                    <attribute name="lem">which</attribute>
+                </when>
+            </choose>
         </template>
     </def-rule>
     <!-- to-do: define two rules: (1) make "all" a determiner - when?
 
-      also, how does one differentiate between "the whole" and "each"?
+      Also, how does one differentiate between "the whole" and "each"?
 
-      when should one use "every" instead of "each"? cf. the passage in Aeneid
-      1 when Aeneas and his men enter the harbor-of-sorts
+      When should one use "every" instead of "each"? cf. the passage in Aeneid
+      1 when Aeneas and his men enter the harbor-of-sorts.
 
-      anyway, "all Gaul" vs. "all the state" vs. "all states" vs. "all the
-      states"
+      "all Gaul" vs. "all the state" vs. "all states" vs. "all the states"
 
       This is basically the second rule: add a "the" to words not already
-      determined -->
+      determined. -->
+    <!-- consider other possible determiners: "the first" vs. "one", "the
+      other" vs. "another", etc. -->
+    <!-- we should default to adding "a", since, if the definiteness is
+      important, Latin authors often specify it with "ille". This also means
+      not providing determiners for plural words. -->
+    <!-- Make "Belgae", a plural word without a determiner, into "the 
+      Belgae". -->
+    <!-- Wait - we need to check if it already has a determiner - or do we?
+      Does "Belgae" always refer to all of them? -->
+    <!-- How does one differentiate between "another" and "other"? -->
+    <def-rule>
+        <template match="NODE[@si='obl' and @Case='Abl']">
+            <copy>
+                <apply-template select="@*|*"/>
+                <NODE si="case" lem="by" UPOSTAG="ADP"/>
+            </copy>
+        </template>
+        <template match="NODE[@si='obl' and @Case='Abl']/@Case">
+
+            <attribute name="Case">Acc</attribute>
+        </template>
+    </def-rule>
 </transfer>
