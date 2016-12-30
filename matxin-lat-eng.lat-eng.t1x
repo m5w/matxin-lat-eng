@@ -1,33 +1,41 @@
 <transfer>
     <def-rule>
-        <template match="NODE[(@lem='who' or @lem='which') and @Case='Gen']">
+        <template match="NODE[(@lem='which') and @Case='Gen']">
             <copy>
                 <apply-templates select="@*|*"/>
                 <NODE si="case" lem="of" UPOSTAG="ADP"/>
             </copy>
         </template>
-        <template match="NODE[(@lem='who' or @lem='which') and @Case='Gen']/@Case">
+        <template match="NODE[(@lem='which') and @Case='Gen']/@Case">
             <attribute name="Case">Acc</attribute>
         </template>
     </def-rule>
 
     <def-rule>
-        <template match="NODE[@Animacy]/NODE[@si='acl']/NODE[@lem='who' or @lem='which']">
+        <template match="NODE[@Animacy='Anim']/NODE[@si='acl']/NODE[@lem='which']">
             <copy>
                 <apply-templates select="@*|*"/>
             </copy>
         </template>
-        <template match="NODE[@Animacy]/NODE[@si='acl']/NODE[@lem='who' or @lem='which']/@lem">
-            <choose>
-                <when test="../../../@Animacy='Anim'">
-                    <attribute name="lem">who</attribute>
-                </when>
-                <when test="../../../@Animacy='Inan'">
-                    <attribute name="lem">which</attribute>
-                </when>
-            </choose>
+        <template match="NODE[@Animacy='Anim']/NODE[@si='acl']/NODE[@lem='which']/@lem">
+            <attribute name="lem">who</attribute>
         </template>
     </def-rule>
+
+    <def-rule>
+        <param name="linking_verbs">
+            <lemma>appello</lemma>
+        </param>
+        <template match="NODE[@lem=$linking_verbs/* and UPOSTAG='VERB']/NODE[@si='obj' and @Case='Nom']/../NODE[@lem='which']">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@lem=$linking_verbs/* and UPOSTAG='VERB']/NODE[@si='obj' and @Animacy='Anim' and @Case='Nom']/../NODE[@lem='which']/@lem">
+            <attribute name="lem">who</attribute>
+        </template>
+    </def-rule>
+
     <!-- to-do: define two rules: (1) make "all" a determiner - when?
 
       Also, how does one differentiate between "the whole" and "each"?
