@@ -54,8 +54,9 @@
                 <attribute name="Animacy">
                     <value-of select="./NODE[@lem='who']/@Animacy"/>
                 </attribute>
+                <apply-templates select="./NODE[@si='orphan']"/>
                 <copy>
-                    <apply-templates select="@*|*"/>
+                    <apply-templates select="@*|*[not(@si='orphan')]"/>
                 </copy>
             </NODE>
         </template>
