@@ -56,16 +56,14 @@
 
     <!-- Add a final "and" to each series of conj-s (conjuncts) that lacks one. -->
     <def-rule>
-        <template match="NODE/NODE[@si = 'conj']">
-            <if test="position() = last()">
+        <template match="NODE[@si = 'conj' and not(following-sibling::*[self::NODE and @si = 'conj']) and not(./NODE[@si = 'cc'])]">
+            <copy>
+                <apply-templates select="@*|*"/>
                 <NODE>
                     <attribute name="si">cc</attribute>
                     <attribute name="lem">and</attribute>
                     <attribute name="UPOSTAG">CCONJ</attribute>
                 </NODE>
-            </if>
-            <copy>
-                <apply-templates select="@*|*"/>
             </copy>
         </template>
     </def-rule>
