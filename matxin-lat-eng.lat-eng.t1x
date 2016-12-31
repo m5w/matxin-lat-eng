@@ -1,67 +1,75 @@
 <transfer>
-    <def-rule>
-        <template match="NODE[(@lem='which') and @Case='Gen']">
+    <!-- Change GEN to "of" + ACC. -->
+    <!--<def-rule>
+        <template match="NODE[@Case='Gen']">
             <copy>
                 <apply-templates select="@*|*"/>
                 <NODE si="case" lem="of" UPOSTAG="ADP"/>
             </copy>
         </template>
-        <template match="NODE[(@lem='which') and @Case='Gen']/@Case">
+        <template match="NODE[@Case='Gen']/@Case">
             <attribute name="Case">Acc</attribute>
         </template>
+    </def-rule>-->
+
+    <!-- Add each antecedent's Animacy to the antecedent's relative pronoun. -->
+    <def-rule>
+        <template match="NODE[@Animacy]/NODE[@si='acl' and @UPOSTAG='VERB']/NODE[@lem='who']">
+            <copy>
+                <apply-templates select="@*|*"/>
+                <attribute name="Animacy">
+                    <value-of select="../../@Animacy"/>
+                </attribute>
+            </copy>
+        </template>
     </def-rule>
 
-    <def-rule>
-        <template match="NODE[@Animacy='Anim']/NODE[@si='acl']/NODE[@lem='which']">
+    <!--<def-rule>
+        <template match="NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]">
+            <NODE>
+                <attribute name="si">
+                    <value-of select="@si"/>
+                </attribute>
+                <attribute name="UPOSTAG">
+                    DET
+                </attribute>
+                <attribute name="Gender">
+                    <value-of select="./NODE[@lem='who']/@Gender"/>
+                </attribute>
+                <attribute name="Number">
+                    <value-of select="./NODE[@lem='who']/@Number"/>
+                </attribute>
+                <attribute name="Animacy">
+                    <value-of select="./NODE[@lem='who']/@Animacy"/>
+                </attribute>
+                <copy>
+                    <apply-templates select="@*|*"/>
+                </copy>
+            </NODE>
+        </template>
+        <template match="NODE[@UPOSTAG='DET']/NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]/@si">
+            <attribute name="si">
+                acl
+            </attribute>
+        </template>
+    </def-rule>-->
+
+    <!--<def-rule>
+        <template match="NODE[@UPOSTAG='VERB' and
+                @lem='call']/NODE[@lem='who' and ../NODE[@si='obj' and @Case='Nom' and @Animacy]]">
             <copy>
                 <apply-templates select="@*|*"/>
             </copy>
         </template>
-        <template match="NODE[@Animacy='Anim']/NODE[@si='acl']/NODE[@lem='which']/@lem">
-            <attribute name="lem">who</attribute>
+        <template match="NODE[@UPOSTAG='VERB' and
+                @lem='call']/NODE[@lem='who' and ../NODE[@si='obj' and @Case='Nom' and @Animacy]]/@Animacy">
+            <attribute name="Animacy">
+                <value-of select="../../NODE[@si='obj' and @Case='Nom']/@Animacy"/>
+            </attribute>
         </template>
-    </def-rule>
+    </def-rule>-->
 
-    <def-rule>
-        <template match="NODE[@UPOSTAG='VERB']/NODE[@lem='which' and ../NODE[@si='obj' and @Animacy='Anim' and @Case='Nom']]">
-            <copy>
-                <apply-templates select="@*|*"/>
-            </copy>
-        </template>
-        <template match="NODE[@UPOSTAG='VERB']/NODE[@lem='which' and ../NODE[@si='obj' and @Animacy='Anim' and @Case='Nom']]/@lem">
-            <choose>
-                <when test="../../@lem='call'">
-                    <attribute name="lem">who</attribute>
-                </when>
-                <otherwise>
-                    <attribute name="lem">which</attribute>
-                </otherwise>
-            </choose>
-        </template>
-    </def-rule>
-
-    <!-- to-do: define two rules: (1) make "all" a determiner - when?
-
-      Also, how does one differentiate between "the whole" and "each"?
-
-      When should one use "every" instead of "each"? cf. the passage in Aeneid
-      1 when Aeneas and his men enter the harbor-of-sorts.
-
-      "all Gaul" vs. "all the state" vs. "all states" vs. "all the states"
-
-      This is basically the second rule: add a "the" to words not already
-      determined. -->
-    <!-- consider other possible determiners: "the first" vs. "one", "the
-      other" vs. "another", etc. -->
-    <!-- we should default to adding "a", since, if the definiteness is
-      important, Latin authors often specify it with "ille". This also means
-      not providing determiners for plural words. -->
-    <!-- Make "Belgae", a plural word without a determiner, into "the 
-      Belgae". -->
-    <!-- Wait - we need to check if it already has a determiner - or do we?
-      Does "Belgae" always refer to all of them? -->
-    <!-- How does one differentiate between "another" and "other"? -->
-    <def-rule>
+    <!--<def-rule>
         <template match="NODE[@si='obl' and @Case='Abl']">
             <copy>
                 <apply-template select="@*|*"/>
@@ -69,8 +77,19 @@
             </copy>
         </template>
         <template match="NODE[@si='obl' and @Case='Abl']/@Case">
-
             <attribute name="Case">Acc</attribute>
         </template>
-    </def-rule>
+    </def-rule>-->
+
+    <!-- Change Inan "who" to "which". -->
+    <!--<def-rule>
+        <template match="NODE[@lem='who' and @Animacy='Inan']">
+            <copy>
+                <apply-template select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@lem='who' and @Animacy='Inan']/@lem">
+            <attribute name="lem">which</attribute>
+        </template>
+    </def-rule>-->
 </transfer>
