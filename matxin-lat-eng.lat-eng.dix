@@ -125,7 +125,7 @@
         <e><p><l>appello</l><r>call</r></p><par n="VERB"/></e>
         <e><p><l>ipse</l><r>himself</r></p><par n="PRON"/></e>
         <e><p><l>lingua</l><r>language<s n="Animacy"/>Inan</r></p><par n="NOUN"/></e>
-        <e><p><l>noster</l><r>our</r></p><par n="ADJ__DET"/></e>
+        <e><p><l>noster</l><r>our</r></p><par n="ADJ"/></e>
         <e><p><l>pars</l><r>part<s n="Animacy"/>Inan</r></p><par n="NOUN"/></e>
         <e><p><l>qui</l><r>who</r></p><par n="PRON"/></e>
     </section>

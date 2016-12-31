@@ -128,6 +128,21 @@
         </template>
     </def-rule>
 
+    <!-- Change each "our" with an elided nominal to "ours". -->
+    <def-rule>
+        <template match="NODE[not(@si = 'amod') and @lem = 'our' and @UPOSTAG = 'ADJ']">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[not(@si = 'amod') and @lem = 'our' and @UPOSTAG = 'ADJ']/@lem">
+            <attribute name="lem">ours</attribute>
+        </template>
+        <template match="NODE[not(@si = 'amod') and @lem = 'our' and @UPOSTAG = 'ADJ']/@UPOSTAG">
+            <attribute name="UPOSTAG">PRON</attribute>
+        </template>
+    </def-rule>
+
     <!-- Change GEN to "of" + ACC. -->
     <def-rule>
         <template match="NODE[@Case = 'Gen']">
@@ -159,6 +174,22 @@
         </template>
         <template match="NODE[@si = 'obl' and @Case = 'Abl']/@Case">
             <attribute name="Case">Acc</attribute>
+        </template>
+    </def-rule>
+
+    <!-- Add a "the" to each non-Def (definite) NOUN lacking a determiner or numeral. -->
+    <def-rule>
+        <template match="NODE[(@UPOSTAG = 'NOUN' or (not(@si = 'amod') and @UPOSTAG = 'ADJ')) and not(@Definite = 'Def') and not(./NODE[@si = 'det' or @si = 'nummod'])]">
+            <copy>
+                <apply-templates select="@*|*"/>
+                <NODE>
+                    <attribute name="si">det</attribute>
+                    <attribute name="lem">the</attribute>
+                    <attribute name="UPOSTAG">DET</attribute>
+                    <attribute name="Definite">Def</attribute>
+                    <attribute name="PronType">Art</attribute>
+                </NODE>
+            </copy>
         </template>
     </def-rule>
 </transfer>
