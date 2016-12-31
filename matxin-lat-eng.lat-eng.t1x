@@ -71,8 +71,9 @@
         </template>
     </def-rule>
 
+    <!-- Change ABL obl-s (oblique nominals) of agent to Pass (passive) VERB-s to "by" + ACC. -->
     <def-rule>
-        <template match="NODE[@si='obl' and @Case='Abl']">
+        <template match="NODE[@si='obl' and @Case='Abl' and ../@UPOSTAG='VERB' and ../@Voice='Pass']">
             <copy>
                 <apply-templates select="@*|*"/>
                 <NODE>
@@ -87,7 +88,7 @@
         </template>
     </def-rule>
 
-    <!-- Change Inan "who" to "which". -->
+    <!-- Change Inan (inanimate) "who" to "which". -->
     <def-rule>
         <template match="NODE[@lem='who' and @Animacy='Inan']">
             <copy>
