@@ -16,7 +16,7 @@
         </template>
     </def-rule>
 
-    <!-- Add each antecedent's Animacy to the antecedent's relative pronoun. -->
+    <!-- Copy Animacy from antecedent to relative pronoun. -->
     <def-rule>
         <template match="NODE[@Animacy]/NODE[@si='acl' and @UPOSTAG='VERB']/NODE[@lem='who']">
             <copy>
@@ -28,6 +28,7 @@
         </template>
     </def-rule>
 
+    <!-- Copy Animacy across linking verbs. -->
     <def-rule>
         <template match="NODE[@UPOSTAG='VERB' and
                 @lem='call']/NODE[@lem='who' and not(@Animacy) and ../NODE[@si='obj' and @Case='Nom' and @Animacy]]">
@@ -40,6 +41,7 @@
         </template>
     </def-rule>
 
+    <!-- Add an antecedent to each relative clause that lacks one. -->
     <def-rule>
         <template match="NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]">
             <NODE>
@@ -54,12 +56,16 @@
                 <attribute name="Animacy">
                     <value-of select="./NODE[@lem='who']/@Animacy"/>
                 </attribute>
+
+                <!-- Move the orphan-s of the relative clause's VERB under the antecedent. -->
                 <apply-templates select="./NODE[@si='orphan']"/>
                 <copy>
                     <apply-templates select="@*|*[not(self::NODE and @si='orphan')]"/>
                 </copy>
             </NODE>
         </template>
+
+        <!-- The verb is now acl to (a clausal modifier of) the antecedent. -->
         <template match="NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]/@si">
             <attribute name="si">acl</attribute>
         </template>
