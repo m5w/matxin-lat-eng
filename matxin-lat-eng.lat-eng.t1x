@@ -57,7 +57,7 @@
     <!-- Add a final "and" to each series of conj-s (conjuncts) that lacks one. -->
     <def-rule>
         <template match="NODE/NODE[@si = 'conj']">
-            <if test="position() = last() and not(./NODE[@si = 'cc'])">
+            <if test="position() = last()">
                 <NODE>
                     <attribute name="si">cc</attribute>
                     <attribute name="lem">and</attribute>
