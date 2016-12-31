@@ -56,7 +56,7 @@
                 </attribute>
                 <apply-templates select="./NODE[@si='orphan']"/>
                 <copy>
-                    <apply-templates select="@*|*[not(@si='orphan')]"/>
+                    <apply-templates select="@*|*[not(self::NODE and @si='orphan')]"/>
                 </copy>
             </NODE>
         </template>
