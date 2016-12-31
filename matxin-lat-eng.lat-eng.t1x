@@ -1,24 +1,7 @@
 <transfer>
-    <!-- Change GEN to "of" + ACC. -->
-    <def-rule>
-        <template match="NODE[@Case='Gen']">
-            <copy>
-                <apply-templates select="@*|*"/>
-                <NODE>
-                    <attribute name="si">case</attribute>
-                    <attribute name="lem">of</attribute>
-                    <attribute name="UPOSTAG">ADP</attribute>
-                </NODE>
-            </copy>
-        </template>
-        <template match="NODE[@Case='Gen']/@Case">
-            <attribute name="Case">Acc</attribute>
-        </template>
-    </def-rule>
-
     <!-- Copy Animacy from antecedent to relative pronoun. -->
     <def-rule>
-        <template match="NODE[@Animacy]/NODE[@si='acl' and @UPOSTAG='VERB']/NODE[@lem='who']">
+        <template match="NODE[@Animacy]/NODE[@si = 'acl' and @UPOSTAG = 'VERB']/NODE[@lem = 'who']">
             <copy>
                 <attribute name="Animacy">
                     <value-of select="../../@Animacy"/>
@@ -30,11 +13,11 @@
 
     <!-- Copy Animacy across linking verbs. -->
     <def-rule>
-        <template match="NODE[@UPOSTAG='VERB' and
-                @lem='call']/NODE[@lem='who' and not(@Animacy) and ../NODE[@si='obj' and @Case='Nom' and @Animacy]]">
+        <template match="NODE[@UPOSTAG = 'VERB' and
+                @lem = 'call']/NODE[@lem = 'who' and not(@Animacy) and ../NODE[@si = 'obj' and @Case = 'Nom' and @Animacy]]">
             <copy>
                 <attribute name="Animacy">
-                    <value-of select="../NODE[@si='obj' and @Case='Nom']/@Animacy"/>
+                    <value-of select="../NODE[@si = 'obj' and @Case = 'Nom']/@Animacy"/>
                 </attribute>
                 <apply-templates select="@*|*"/>
             </copy>
@@ -43,7 +26,7 @@
 
     <!-- Add an antecedent to each relative clause that lacks one. -->
     <def-rule>
-        <template match="NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]">
+        <template match="NODE[not(@si = 'acl') and @UPOSTAG = 'VERB' and ./NODE[@lem = 'who']]">
             <NODE>
                 <attribute name="si">
                     <value-of select="@si"/>
@@ -51,29 +34,74 @@
                 <attribute name="lem">that</attribute>
                 <attribute name="UPOSTAG">DET</attribute>
                 <attribute name="Number">
-                    <value-of select="./NODE[@lem='who']/@Number"/>
+                    <value-of select="./NODE[@lem = 'who']/@Number"/>
                 </attribute>
                 <attribute name="Animacy">
-                    <value-of select="./NODE[@lem='who']/@Animacy"/>
+                    <value-of select="./NODE[@lem = 'who']/@Animacy"/>
                 </attribute>
 
                 <!-- Move the orphan-s of the relative clause's VERB under the antecedent. -->
-                <apply-templates select="./NODE[@si='orphan']"/>
+                <apply-templates select="./NODE[@si = 'orphan']"/>
                 <copy>
-                    <apply-templates select="@*|*[not(self::NODE and @si='orphan')]"/>
+                    <apply-templates select="@*|*[not(self::NODE and @si = 'orphan')]"/>
                 </copy>
             </NODE>
         </template>
 
         <!-- The verb is now acl to (a clausal modifier of) the antecedent. -->
-        <template match="NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]/@si">
+        <template match="NODE[not(@si = 'acl') and @UPOSTAG = 'VERB' and ./NODE[@lem = 'who']]/@si">
             <attribute name="si">acl</attribute>
+        </template>
+    </def-rule>
+
+    <!-- Add a final "and" to each series of conj-s (conjuncts) that lacks one. -->
+    <def-rule>
+        <template match="NODE/NODE[@si = 'conj']">
+            <if test="position() = last() and not(./NODE[@si = 'cc'])">
+                <NODE>
+                    <attribute name="si">cc</attribute>
+                    <attribute name="lem">and</attribute>
+                    <attribute name="UPOSTAG">CCONJ</attribute>
+                </NODE>
+            </if>
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+    </def-rule>
+
+    <!-- Change Inan (inanimate) "who" to "which". -->
+    <def-rule>
+        <template match="NODE[@lem = 'who' and @Animacy = 'Inan']">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@lem = 'who' and @Animacy = 'Inan']/@lem">
+            <attribute name="lem">which</attribute>
+        </template>
+    </def-rule>
+
+    <!-- Change GEN to "of" + ACC. -->
+    <def-rule>
+        <template match="NODE[@Case = 'Gen']">
+            <copy>
+                <apply-templates select="@*|*"/>
+                <NODE>
+                    <attribute name="si">case</attribute>
+                    <attribute name="lem">of</attribute>
+                    <attribute name="UPOSTAG">ADP</attribute>
+                </NODE>
+            </copy>
+        </template>
+        <template match="NODE[@Case = 'Gen']/@Case">
+            <attribute name="Case">Acc</attribute>
         </template>
     </def-rule>
 
     <!-- Change ABL obl-s (oblique nominals) of agent to Pass (passive) VERB-s to "by" + ACC. -->
     <def-rule>
-        <template match="NODE[@si='obl' and @Case='Abl' and ../@UPOSTAG='VERB' and ../@Voice='Pass']">
+        <template match="NODE[@si = 'obl' and @Case = 'Abl' and ../@UPOSTAG = 'VERB' and ../@Voice = 'Pass']">
             <copy>
                 <apply-templates select="@*|*"/>
                 <NODE>
@@ -83,20 +111,8 @@
                 </NODE>
             </copy>
         </template>
-        <template match="NODE[@si='obl' and @Case='Abl']/@Case">
+        <template match="NODE[@si = 'obl' and @Case = 'Abl']/@Case">
             <attribute name="Case">Acc</attribute>
-        </template>
-    </def-rule>
-
-    <!-- Change Inan (inanimate) "who" to "which". -->
-    <def-rule>
-        <template match="NODE[@lem='who' and @Animacy='Inan']">
-            <copy>
-                <apply-templates select="@*|*"/>
-            </copy>
-        </template>
-        <template match="NODE[@lem='who' and @Animacy='Inan']/@lem">
-            <attribute name="lem">which</attribute>
         </template>
     </def-rule>
 </transfer>
