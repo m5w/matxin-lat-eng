@@ -1,41 +1,53 @@
 <transfer>
     <!-- Change GEN to "of" + ACC. -->
-    <!--<def-rule>
+    <def-rule>
         <template match="NODE[@Case='Gen']">
             <copy>
                 <apply-templates select="@*|*"/>
-                <NODE si="case" lem="of" UPOSTAG="ADP"/>
+                <NODE>
+                    <attribute name="si">case</attribute>
+                    <attribute name="lem">of</attribute>
+                    <attribute name="UPOSTAG">ADP</attribute>
+                </NODE>
             </copy>
         </template>
         <template match="NODE[@Case='Gen']/@Case">
             <attribute name="Case">Acc</attribute>
         </template>
-    </def-rule>-->
+    </def-rule>
 
     <!-- Add each antecedent's Animacy to the antecedent's relative pronoun. -->
     <def-rule>
         <template match="NODE[@Animacy]/NODE[@si='acl' and @UPOSTAG='VERB']/NODE[@lem='who']">
             <copy>
-                <apply-templates select="@*|*"/>
                 <attribute name="Animacy">
                     <value-of select="../../@Animacy"/>
                 </attribute>
+                <apply-templates select="@*|*"/>
             </copy>
         </template>
     </def-rule>
 
-    <!--<def-rule>
+    <def-rule>
+        <template match="NODE[@UPOSTAG='VERB' and
+                @lem='call']/NODE[@lem='who' and not(@Animacy) and ../NODE[@si='obj' and @Case='Nom' and @Animacy]]">
+            <copy>
+                <attribute name="Animacy">
+                    <value-of select="../NODE[@si='obj' and @Case='Nom']/@Animacy"/>
+                </attribute>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+    </def-rule>
+
+    <def-rule>
         <template match="NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]">
             <NODE>
                 <attribute name="si">
                     <value-of select="@si"/>
                 </attribute>
-                <attribute name="UPOSTAG">
-                    DET
-                </attribute>
-                <attribute name="Gender">
-                    <value-of select="./NODE[@lem='who']/@Gender"/>
-                </attribute>
+                <attribute name="lem">that</attribute>
+                <attribute name="UPOSTAG">DET</attribute>
                 <attribute name="Number">
                     <value-of select="./NODE[@lem='who']/@Number"/>
                 </attribute>
@@ -47,49 +59,36 @@
                 </copy>
             </NODE>
         </template>
-        <template match="NODE[@UPOSTAG='DET']/NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]/@si">
-            <attribute name="si">
-                acl
-            </attribute>
+        <template match="NODE[not(@si='acl') and @UPOSTAG='VERB' and ./NODE[@lem='who']]/@si">
+            <attribute name="si">acl</attribute>
         </template>
-    </def-rule>-->
+    </def-rule>
 
-    <!--<def-rule>
-        <template match="NODE[@UPOSTAG='VERB' and
-                @lem='call']/NODE[@lem='who' and ../NODE[@si='obj' and @Case='Nom' and @Animacy]]">
-            <copy>
-                <apply-templates select="@*|*"/>
-            </copy>
-        </template>
-        <template match="NODE[@UPOSTAG='VERB' and
-                @lem='call']/NODE[@lem='who' and ../NODE[@si='obj' and @Case='Nom' and @Animacy]]/@Animacy">
-            <attribute name="Animacy">
-                <value-of select="../../NODE[@si='obj' and @Case='Nom']/@Animacy"/>
-            </attribute>
-        </template>
-    </def-rule>-->
-
-    <!--<def-rule>
+    <def-rule>
         <template match="NODE[@si='obl' and @Case='Abl']">
             <copy>
-                <apply-template select="@*|*"/>
-                <NODE si="case" lem="by" UPOSTAG="ADP"/>
+                <apply-templates select="@*|*"/>
+                <NODE>
+                    <attribute name="si">case</attribute>
+                    <attribute name="lem">by</attribute>
+                    <attribute name="UPOSTAG">ADP</attribute>
+                </NODE>
             </copy>
         </template>
         <template match="NODE[@si='obl' and @Case='Abl']/@Case">
             <attribute name="Case">Acc</attribute>
         </template>
-    </def-rule>-->
+    </def-rule>
 
     <!-- Change Inan "who" to "which". -->
-    <!--<def-rule>
+    <def-rule>
         <template match="NODE[@lem='who' and @Animacy='Inan']">
             <copy>
-                <apply-template select="@*|*"/>
+                <apply-templates select="@*|*"/>
             </copy>
         </template>
         <template match="NODE[@lem='who' and @Animacy='Inan']/@lem">
             <attribute name="lem">which</attribute>
         </template>
-    </def-rule>-->
+    </def-rule>
 </transfer>
