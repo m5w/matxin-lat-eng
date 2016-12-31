@@ -24,6 +24,54 @@
         </template>
     </def-rule>
 
+    <!-- Copy Animacy from subject to intensive pronoun. -->
+    <def-rule>
+        <template match="NODE[@UPOSTAG = 'VERB' and ./NODE[@Animacy and @si = 'nsubj']]/NODE/NODE[@si = 'nmod' and @lem = 'himself']">
+            <copy>
+                <attribute name="Animacy">
+                    <value-of select="../../NODE[@si = 'nsubj']/@Animacy"/>
+                </attribute>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+    </def-rule>
+
+    <!-- Change "himself" to "herself", "itself", or "themselves" depending on Animacy and Gender. -->
+    <def-rule>
+        <template match="NODE[@lem = 'himself']">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@lem = 'himself']/@lem">
+            <choose>
+                <when test="../@Number = 'Sing'">
+                    <choose>
+                        <when test="../@Animacy = 'Anim'">
+                            <choose>
+                                <when test="../@Gender = 'Masc'">
+                                    <attribute name="lem">himself</attribute>
+                                </when>
+                                <when test="../@Gender = 'Fem'">
+                                    <attribute name="lem">herself</attribute>
+                                </when>
+                                <otherwise>
+                                    <attribute name="lem">itself</attribute>
+                                </otherwise>
+                            </choose>
+                        </when>
+                        <otherwise>
+                            <attribute name="lem">itself</attribute>
+                        </otherwise>
+                    </choose>
+                </when>
+                <otherwise>
+                    <attribute name="lem">themselves</attribute>
+                </otherwise>
+            </choose>
+        </template>
+    </def-rule>
+
     <!-- Add an antecedent to each relative clause that lacks one. -->
     <def-rule>
         <template match="NODE[not(@si = 'acl') and @UPOSTAG = 'VERB' and ./NODE[@lem = 'who']]">
@@ -54,6 +102,18 @@
         </template>
     </def-rule>
 
+    <!-- Change Inan (inanimate) "who" to "which". -->
+    <def-rule>
+        <template match="NODE[@lem = 'who' and @Animacy = 'Inan']">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@lem = 'who' and @Animacy = 'Inan']/@lem">
+            <attribute name="lem">which</attribute>
+        </template>
+    </def-rule>
+
     <!-- Add a final "and" to each series of conj-s (conjuncts) that lacks one. -->
     <def-rule>
         <template match="NODE[@si = 'conj' and not(following-sibling::*[self::NODE and @si = 'conj']) and not(./NODE[@si = 'cc'])]">
@@ -65,18 +125,6 @@
                     <attribute name="UPOSTAG">CCONJ</attribute>
                 </NODE>
             </copy>
-        </template>
-    </def-rule>
-
-    <!-- Change Inan (inanimate) "who" to "which". -->
-    <def-rule>
-        <template match="NODE[@lem = 'who' and @Animacy = 'Inan']">
-            <copy>
-                <apply-templates select="@*|*"/>
-            </copy>
-        </template>
-        <template match="NODE[@lem = 'who' and @Animacy = 'Inan']/@lem">
-            <attribute name="lem">which</attribute>
         </template>
     </def-rule>
 
