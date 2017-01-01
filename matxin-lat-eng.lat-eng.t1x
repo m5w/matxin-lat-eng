@@ -88,10 +88,10 @@
                     <value-of select="./NODE[@lem = 'who']/@Animacy"/>
                 </attribute>
 
-                <!-- Move the orphan-s of the relative clause's VERB under the antecedent. -->
-                <apply-templates select="./NODE[@si = 'orphan']"/>
+                <!-- Move the orphan-s and commas of the relative clause's VERB under the antecedent. -->
+                <apply-templates select="./NODE[@si = 'orphan' or @lem = ',']"/>
                 <copy>
-                    <apply-templates select="@*|*[not(self::NODE and @si = 'orphan')]"/>
+                    <apply-templates select="@*|*[not(self::NODE and (@si = 'orphan' or @lem = ','))]"/>
                 </copy>
             </NODE>
         </template>
