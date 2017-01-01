@@ -1,0 +1,5 @@
+si='root'	lem='.'		.*?	x1.x2
+UPOSTAG='VERB'	si='aux'	.*?	x2+x1
+UPOSTAG='VERB'	si='nsubj'	.*?	x2.x1
+UPOSTAG='VERB'	si='obl'	.*?	x1.x2
+.*?		si='amod'	.*?	x2+x1
