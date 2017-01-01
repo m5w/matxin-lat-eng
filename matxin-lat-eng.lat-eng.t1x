@@ -1,4 +1,15 @@
 <transfer>
+    <!-- Delete all @ref-s. -->
+    <def-rule>
+        <template match="NODE[@ref]">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@ref]/@ref">
+        </template>
+    </def-rule>
+
     <!-- Copy Animacy from antecedent to relative pronoun. -->
     <def-rule>
         <template match="NODE[@Animacy]/NODE[@si = 'acl' and @UPOSTAG = 'VERB']/NODE[@lem = 'who']">
