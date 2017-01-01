@@ -108,7 +108,7 @@
 		</pardef>
     </pardefs>
     <section id="main" type="standard">
-        <e><p><l>Aquitani</l><r>Aquitanians<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
+        <e><p><l>Aquitani</l><r>Aquitanian<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
         <e><p><l>Belgae</l><r>Belgae<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
 		<e><p><l>alius</l><r>another</r></p><par n="ADJ__DET"/></e>
 		<e><p><l>divido</l><r>divide</r></p><par n="VERB"/></e>
@@ -119,8 +119,8 @@
 		<e><p><l>tertius</l><r>third</r></p><par n="ADJ"/></e>
 		<e><p><l>tres</l><r>three</r></p><par n="NUM"/></e>
 		<e><p><l>unus</l><r>one</r></p><par n="ADJ__DET"/></e>
-        <e><p><l>Celtae</l><r>Celts<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
-        <e><p><l>Galli</l><r>Gauls<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
+        <e><p><l>Celtae</l><r>Celt<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
+        <e><p><l>Galli</l><r>Gaul<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
         <e><p><l>Gallia</l><r>Gaul<s n="Animacy"/>Inan<s n="Definite"/>Def</r></p><par n="NOUN"/></e> <!-- There's only one Gaul. -->
         <e><p><l>appello</l><r>call</r></p><par n="VERB"/></e>
         <e><p><l>ipse</l><r>himself</r></p><par n="PRON"/></e>
