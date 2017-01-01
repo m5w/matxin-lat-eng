@@ -1,15 +1,9 @@
-si = 'root'			lem = '.'			.*?	x1.x2
-UPOSTAG = 'VERB'		si = 'aux'			.*?	x2+x1
-UPOSTAG = 'VERB' && si != 'acl'	si = 'nsubj'			.*?	x2.x1
-UPOSTAG = 'VERB'		si = 'obl'			.*?	x1.x2
-.*?				si = 'amod'			.*?	x2+x1
-.*?				si = 'nummod'			.*?	x2+x1
-.*?				si = 'case'			.*?	x2.x1
-.*?				si = 'acl'			.*?	x1.x2
-.*?				lem = ','			.*?	x2.x1
-.*?				si = 'cc'			.*?	x2.x1
-UPOSTAG = 'VERB' && si = acl'	lem = 'who' || lem = 'which'	.*?	x2.x1
-.*?				lem = 'of'			.*?	x2+x1
-.*?				si = 'det'			.*?	x2.x1
-.*?				si = 'conj'			.*?	x1.x2
-.*?				si = 'orphan'			.*?	x1.x2
+si='root'	lem='.'	.*?	x1.x2
+.*?	si='conj'	.*?	x1.x2
+si='conj'	lem=','	.*?	x2.x1
+si='conj'	si='cc'	.*?	x2.x1
+.*?	si='orphan'	.*?	x2.x1
+.*?	si='acl'	.*?	x1.x2
+si='acl'	lem='who' || lem='which'	.*?	x2.x1
+.*?	si='obj'	.*?	x1.x2
+.*?	si='obl'	.*?	x1.x2
