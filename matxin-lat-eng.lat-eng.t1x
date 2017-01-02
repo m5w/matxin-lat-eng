@@ -178,6 +178,17 @@
     </def-rule>
 
     <def-rule>
+        <template match="NODE[not(@si = 'amod') and (
+                @lem = 'one' or
+                @lem = 'another') and @UPOSTAG = 'ADJ']">
+            <copy>
+                <attribute name="Definite">Def</attribute>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+    </def-rule>
+
+    <def-rule>
         <template match="NODE[@si = 'amod' and (
                 @lem = 'one' or
                 @lem = 'another') and @UPOSTAG = 'ADJ']">
