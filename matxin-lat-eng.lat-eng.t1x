@@ -177,6 +177,21 @@
         </template>
     </def-rule>
 
+    <def-rule>
+        <template match="NODE[@si = 'amod' and (
+                @lem = 'one' or
+                @lem = 'another') and @UPOSTAG = 'ADJ']">
+            <copy>
+                <apply-templates select="@*|*"/>
+            </copy>
+        </template>
+        <template match="NODE[@si = 'amod' and (
+                @lem = 'one' or
+                @lem = 'another') and @UPOSTAG = 'ADJ']/@si">
+            <attribute name="si">det</attribute>
+        </template>
+    </def-rule>
+
     <!-- Add a "the" to each non-Def (definite) NOUN lacking a determiner or numeral. -->
     <def-rule>
         <template match="NODE[(@UPOSTAG = 'NOUN' or (not(@si = 'amod') and @UPOSTAG = 'ADJ')) and not(@Definite = 'Def') and not(./NODE[@si = 'det' or @si = 'nummod'])]">

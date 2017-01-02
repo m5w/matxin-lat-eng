@@ -79,9 +79,6 @@
 		<pardef n="ADJ">
 			<e><p><l><s n="mi"/>ADJ</l><r><s n="UPOSTAG"/>ADJ</r></p><par n="Case"/></e>
 		</pardef>
-        <pardef n="ADJ__DET">
-            <e><p><l><s n="mi"/>ADJ</l><r><s n="UPOSTAG"/>DET</r></p><par n="Case"/></e>
-        </pardef>
 		<pardef n="NOUN">
 			<e><p><l><s n="mi"/>NOUN</l><r><s n="UPOSTAG"/>NOUN</r></p><par n="Case"/></e>
 		</pardef>
@@ -113,7 +110,7 @@
     <section id="main" type="standard">
         <e><p><l>Aquitani</l><r>Aquitanian<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
         <e><p><l>Belgae</l><r>Belgae<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
-		<e><p><l>alius</l><r>another</r></p><par n="ADJ__DET"/></e>
+		<e><p><l>alius</l><r>another</r></p><par n="ADJ"/></e>
 		<e><p><l>divido</l><r>divide</r></p><par n="VERB"/></e>
 		<e><p><l>in</l><r>into</r></p><par n="ADP"/></e>
 		<e><p><l>incolo</l><r>inhabit</r></p><par n="VERB"/></e>
@@ -121,7 +118,7 @@
 		<e><p><l>sum</l><r>be</r></p><par n="VERB"/></e>
 		<e><p><l>tertius</l><r>third</r></p><par n="ADJ"/></e>
 		<e><p><l>tres</l><r>three</r></p><par n="NUM"/></e>
-		<e><p><l>unus</l><r>one</r></p><par n="ADJ__DET"/></e>
+		<e><p><l>unus</l><r>one</r></p><par n="ADJ"/></e>
         <e><p><l>Celtae</l><r>Celt<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
         <e><p><l>Galli</l><r>Gaul<s n="Animacy"/>Anim</r></p><par n="NOUN"/></e>
         <e><p><l>Gallia</l><r>Gaul<s n="Animacy"/>Inan<s n="Definite"/>Def</r></p><par n="NOUN"/></e> <!-- There's only one Gaul. -->
