@@ -160,6 +160,30 @@
         </template>
     </def-rule>
 
+    <!-- Add aux to present passive verbs. -->
+    <def-rule>
+        <template match="NODE[@UPOSTAG = 'VERB' and @Tense = 'Pres' and @Voice = 'Pass']">
+            <copy>
+                <apply-templates select="@*|*"/>
+                <NODE>
+                    <attribute name="si">aux</attribute>
+                    <attribute name="lem">be</attribute>
+                    <attribute name="UPOSTAG">VERB</attribute>
+                    <attribute name="Mood">Ind</attribute>
+                    <attribute name="Number">
+                        <value-of select="@Number"/>
+                    </attribute>
+                    <attribute name="Person">
+                        <value-of select="@Person"/>
+                    </attribute>
+                    <attribute name="Tense">Pres</attribute>
+                    <attribute name="VerbForm">Fin</attribute>
+                    <attribute name="Voice">Act</attribute>
+                </NODE>
+            </copy>
+        </template>
+    </def-rule>
+
     <!-- Change ABL obl-s (oblique nominals) of agent to Pass (passive) VERB-s to "by" + ACC. -->
     <def-rule>
         <template match="NODE[@si = 'obl' and @Case = 'Abl' and ../@UPOSTAG = 'VERB' and ../@Voice = 'Pass']">
