@@ -184,9 +184,10 @@
         </template>
     </def-rule>
 
-    <!-- Change ABL obl-s (oblique nominals) of agent to Pass (passive) VERB-s to "by" + ACC. -->
+    <!-- Change ABL obl-s (oblique nominals) of agent to Pass (passive) VERB-s to "by" + ACC.
+         Also apply this rule to conjugates. -->
     <def-rule>
-        <template match="NODE[@si = 'obl' and @Case = 'Abl' and ../@UPOSTAG = 'VERB' and ../@Voice = 'Pass']">
+        <template match="NODE[((@si = 'obl' or @si = 'conj') and @Case = 'Abl') and ../@UPOSTAG = 'VERB' and ../@Voice = 'Pass']">
             <copy>
                 <apply-templates select="@*|*"/>
                 <NODE>
@@ -196,7 +197,7 @@
                 </NODE>
             </copy>
         </template>
-        <template match="NODE[@si = 'obl' and @Case = 'Abl']/@Case">
+        <template match="NODE[((@si = 'obl' or @si = 'conj') and @Case = 'Abl') and ../@UPOSTAG = 'VERB' and ../@Voice = 'Pass']/@Case">
             <attribute name="Case">Acc</attribute>
         </template>
     </def-rule>
