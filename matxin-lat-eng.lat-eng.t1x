@@ -194,7 +194,7 @@
 
     <!-- Add a "the" to each non-Def (definite) NOUN lacking a determiner or numeral. -->
     <def-rule>
-        <template match="NODE[(@UPOSTAG = 'NOUN' or not((
+        <template match="NODE[(@UPOSTAG = 'NOUN' or (not(
                 @si = 'amod' or
                 @si = 'det') and @UPOSTAG = 'ADJ')) and not(@Definite = 'Def') and not(./NODE[@si = 'det' or @si = 'nummod'])]">
             <copy>
